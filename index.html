@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Gift for Dewi Putri Anidyawati ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Musik -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung elemen audio.
+    </audio>
+    
+    <!-- Efek Suara Klik -->
+    <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+    <!-- Kontrol Musik -->
+    <div class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-music"></i> <span id="musicText">Musik: ON</span>
+    </div>
+
+    <!-- Header Modern -->
+    <header class="header">
+        <div class="logo">Untuk Dewi Putri Anidyawati ✨</div>
+        <nav class="nav">
+          <a href="#" onclick="goToScene('scene5')">Gallery Kita</a>
+       </nav>
+   </header>
+
+    <!-- Halaman 1: Amplop / Pembuka -->
+    <div id="scene1" class="scene active">
+        <div class="hearts" aria-hidden="true">
+            <div class="heart">❤</div><div class="heart">❤</div><div class="heart">❤</div>
+            <div class="heart">❤</div><div class="heart">❤</div><div class="heart">❤</div>
+        </div>
+        
+        <h1 class="christmas-title">🎄 Happy New Year 2026 🎄</h1>
+        <p class="subtitle">Adaa sesuatuu yang veryy speciall for youu di akhir tahunn ini...</p>
+        
+        <!-- AMPLOP - PENTING: Ada id="theEnvelope" untuk JavaScript -->
+        <div class="envelope-container" id="theEnvelope">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="body"></div>
+            </div>
+            <p class="instruction"><i class="fas fa-hand-point-up"></i> Sentuh amplopnyaa ya gaiss❕</p>
+        </div>
+        <p class="hint">Buka dengan hatii yang hangatt ❤️</p>
+    </div>
+
+    <!-- Halaman 2: Pilihan Baca/Tidak -->
+    <div id="scene2" class="scene">
+        <h2><i class="fas fa-envelope-open-text"></i> Horee 👏 Surat Spesial Telah Terbuka!✨</h2>
+        <p>Adaa pesan dari hatii yang inginn sampai padamuu di malam yang penuh cahaya dan kebahagian ini... ✨</p>
+        
+        <div class="letter-preview">
+            <p>"Untuk seseorang yang membuat obrolan biasa terasa seperti hadiah🫰..."</p>
+        </div>
+        
+        <p class="question">Mau baca isii lengkapnyaa?</p>
+        
+        <div class="choice-buttons">
+            <button class="btn btn-yes" onclick="showLetter()">
+                <i class="fas fa-check-circle"></i> iyaaa, Mauu Bangett!
+            </button>
+            <button class="btn btn-no" id="btnNo" onmouseover="dodgeButton()" ontouchstart="dodgeButtonMobile()">
+                <i class="fas fa-times-circle"></i> Hmm, Nanti dulu dehh...
+            </button>
+        </div>
+        <p class="playful-hint">(Pilihann yang tepat akann membawa ke kejutan manis hihi 🍬)</p>
+    </div>
+
+    <!-- Halaman 3: Isi Surat / Pengakuan -->
+    <div id="scene3" class="scene">
+        <div class="letter-container">
+            <div class="letter-header">
+                <h2><i class="fas fa-heart"></i> Haii Agitt ♡</h2>
+                <p class="date">31 Desember 2025</p>
+            </div>
+            
+            <div class="letter-content">
+                <p>Happy New Year yaa kamuuu ✨</p>
+                
+                <p>Gaa kerasa yaa setahunn lewat gituu ajaa. banyakk bangett hall yang datangg dann pergiii, tapiii jujur… salahh satuu hall yang palingg akuu syukurin di tahun inii ituu bisaa ketemuu dan kenall samaaa kamuu.</p>
+                
+                <p>Makasiii yaaa buatt semuaa obrolann receh dan randomm kitaa, jugaa buatt perhatiann perhatiann sederhanaa, dann buatt good morning dan good night yang tanpaa sadar jadii rutinitass akuu ahahaha. hal hal sepelee ituu entah kenapaa bikinn hari akuu jadii jauhh lebih berwarnaa dan kerasaa hangatt ajaa.</p>
+                
+                <p>Masuk tahun baru inii, akuu kepikiran bangett satuu hall. akuu ngerasaa nyamann bangett samaaa kamuuu. bukann cumaa nyamann ngobrol, tapii nyamann jadii dirii akuu sendiri waktu samaa kamuu. dan.. akuu jugaa ngerasaa apaa yangg kitaa jalanii selamaa inii berartii bangettt buatt akuu.</p>
+                
+                <div class="highlight-box">
+                    <p><i class="fas fa-star"></i> <strong>Akuu pengenn jujurr ajaa…</strong><br>
+                    akuu punyaa rasaa lebihh kee kamuu.<br>
+                    <small>Akuu gaa mauu maksaa apaa punn, gaa mauu bikinn kamuuu ngerasa harus jawab sekarang jugaa. akuu cuma pengenn kamuuu tau perasaan akuu yang sebenarnyaa, karenaa kamuuu sepenting itu buat akuu pentingg bangett!.</small></p>
+                </div>
+                
+                <p>Apaa punn responn kamuu nantii, akuu pastii ngertiin dan hargain koo. yang penting buat akuu, kitaa harus tetep jujur dan saling jaga rasa nyamann ituu yaa❕.</p>
+                
+                <p>Happy New Year yaaa 🤍<br>
+                Semoga tahun ini lebih baik, lebih hangat, dan semoga… kita bisa jalanin hal baik bareng, pelan-pelan.</p>
+                
+                <div class="closing">
+                    <p>Dengan harapan baru yang lebih baik dari tahun sebelumnyaa,</p>
+                    <p class="signature">- <span id="sender">This Little Thing is made with pure love —— Reyy💝</span> -</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-romantic" onclick="goToScene('scene5')">
+        <i class="fas fa-images"></i> look at our journey
+        </button>
+      </div>
+      </div>
+
+<!-- ========== SCENE BARU: GALLERY ========== -->
+<!-- SCENE 5: GALLERY PORTRAIT VERTICAL -->
+<div id="scene5" class="scene">
+    <div class="gallery-container-portrait">
+        <h2 class="gallery-title-portrait">
+            <i class="fas fa-images" style="color:#ffcc00;"></i> 
+            💾 Our Memories 💾 
+            <i class="fas fa-heart" style="color:#ff6b8b;"></i>
+        </h2>
+        <p class="gallery-subtitle-portrait">
+            Scroll dan liatt kenangan kecill kitaa di tahun 2025 📸<br>
+            <small><i class="fas fa-mobile-alt"></i> Even the smallest memories feel special when they’re with you ♡ .</small>
+        </p>
+        
+        <!-- Container Slide Portrait -->
+        <div class="portrait-slider-container" id="portraitSlider">
+            <!-- Slide 1 -->
+            <div class="portrait-slide active">
+                <div class="portrait-photo-card">
+                    <div class="portrait-frame matcha-portrait-frame">
+                        <!-- Hiasan Es Krim & Matcha -->
+                        <div class="portrait-decoration top">
+                            <div class="decoration-icon icecream-icon">🍦</div>
+                            <div class="decoration-icon matcha-icon">🍵</div>
+                            <div class="decoration-icon icecream-icon">🍦</div>
+                        </div>
+                        
+                        <!-- AREA FOTO VERTIKAL -->
+                        <div class="portrait-photo-area">
+                            <img src="Foto bareng cosplayer.jpg" 
+                                 alt="Memory 1" 
+                                 class="portrait-photo-img">
+                        </div>
+                        
+                        <div class="portrait-decoration bottom">
+                            <div class="decoration-text">
+                                <i class="fas fa-heart"></i> Pertama Kali jalan jalan ke mall bareng <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Label Matcha -->
+                        <div class="matcha-label">
+                            <i class="fas fa-leaf"></i> Matcha Favorite
+                        </div>
+                    </div>
+                    
+                    <div class="portrait-caption">
+                        <h3><span class="caption-icon">🍵🍦💚📸✨</span> First mall date</h3>
+                        <p class="caption-date"><i class="fas fa-calendar-day"></i> 9 November 2025</p>
+                        <p class="caption-desc">inii pertama kalii kitaa jalann jalann ke mall barengg, seruu bangett bisaa fotbar bareng cosplayer keren huhu, and btw kebab samaa es krim matchanyaa enak bangett apalagi makannya bareng kamuu hihi</p>
+                        <div class="caption-tags">
+                            <span class="portrait-tag tag-matcha"><i class="fas fa-leaf"></i> Matcha Day</span>
+                            <span class="portrait-tag tag-icecream"><i class="fas fa-ice-cream"></i> Es Krim</span>
+                            <span class="portrait-tag tag-first"><i class="fas fa-star"></i> First Mall date</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="portrait-slide">
+                <div class="portrait-photo-card">
+                    <div class="portrait-frame icecream-portrait-frame">
+                        <!-- Hiasan Es Krim & Matcha -->
+                        <div class="portrait-decoration top">
+                            <div class="decoration-icon matcha-icon">🍵</div>
+                            <div class="decoration-icon icecream-icon">🍦</div>
+                            <div class="decoration-icon matcha-icon">🍵</div>
+                        </div>
+                        
+                        <!-- AREA FOTO VERTIKAL -->
+                        <div class="portrait-photo-area">
+                            <img src="first pohotoobox kitaa.jpg" 
+                                 alt="Memory 2" 
+                                 class="portrait-photo-img">
+                        </div>
+                        
+                        <div class="portrait-decoration bottom">
+                            <div class="decoration-text">
+                                <i class="fas fa-moon"></i> First Photoobox Kita <i class="fas fa-sun"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Label Es Krim -->
+                        <div class="icecream-label">
+                            <i class="fas fa-ice-cream"></i> Photoobox Time
+                        </div>
+                    </div>
+                    
+                    <div class="portrait-caption">
+                        <h3><span class="caption-icon">📸🤍💕</span>Our First Photoobox</h3>
+                        <p class="caption-date"><i class="fas fa-calendar-day"></i> 14 Desember 2025</p>
+                        <p class="caption-desc">Foto ini diambil pas kitaa beress photoobox ,masii first timee jadii masii malu malu kakuu hihi🤏</p>
+                        <div class="caption-tags">
+                            <span class="portrait-tag tag-late"><i class="fas fa-moon"></i> Late Night Photoobox</span>
+                            <span class="portrait-tag tag-matcha"><i class="fas fa-mug-hot"></i> smiles</span>
+                            <span class="portrait-tag tag-talk"><i class="fas fa-comments"></i> with you</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="portrait-slide">
+                <div class="portrait-photo-card">
+                    <div class="portrait-frame romantic-portrait-frame">
+                        <!-- Hiasan Hati -->
+                        <div class="portrait-decoration top">
+                            <div class="heart-decoration">❤</div>
+                            <div class="heart-decoration">💖</div>
+                            <div class="heart-decoration">❤</div>
+                        </div>
+                        
+                        <!-- AREA FOTO VERTIKAL -->
+                        <div class="portrait-photo-area">
+                            <img src="first gym date.jpg" 
+                                 alt="Kenangan 3" 
+                                 class="portrait-photo-img">
+                        </div>
+                        
+                        <div class="portrait-decoration bottom">
+                            <div class="decoration-text">
+                                <i class="fas fa-coffee"></i> Gym together <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Label Romantic -->
+                        <div class="romantic-label">
+                            <i class="fas fa-heartbeat"></i> First gym date
+                        </div>
+                    </div>
+                    
+                    <div class="portrait-caption">
+                        <h3><span class="caption-icon">💪🤍</span> Our First Gym Date</h3>
+                        <p class="caption-date"><i class="fas fa-calendar-day"></i> 24 Desember 2025</p>
+                        <p class="caption-desc">inii waktuu kitaa pertama kalii gym barengg, aku waktuu ituu seneng bangett karenaa gym date ituu salah satu wishlist aku dari lama huhu, makasii yaa udaa wujudin wishtlist akuu🫰</p>
+                        <div class="caption-tags">
+                            <span class="portrait-tag tag-morning"><i class="fas fa-sun"></i> Sport</span>
+                            <span class="portrait-tag tag-matcha"><i class="fas fa-leaf"></i> Gym</span>
+                            <span class="portrait-tag tag-happy"><i class="fas fa-smile"></i> Together</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="portrait-slide">
+                <div class="portrait-photo-card">
+                    <div class="portrait-frame mix-portrait-frame">
+                        <!-- Hiasan Campuran -->
+                        <div class="portrait-decoration top">
+                            <div class="mix-decoration">🍦</div>
+                            <div class="mix-decoration">💕</div>
+                            <div class="mix-decoration">🍵</div>
+                        </div>
+                        
+                        <!-- AREA FOTO VERTIKAL -->
+                        <div class="portrait-photo-area">
+                            <img src="bioskop.jpg" 
+                                 alt="Kenangan 4" 
+                                 class="portrait-photo-img">
+                        </div>
+                        
+                        <div class="portrait-decoration bottom">
+                            <div class="decoration-text">
+                                <i class="fas fa-heart"></i> Movie & Memories <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Label Mix -->
+                        <div class="mix-label">
+                            <i class="fas fa-ice-cream"></i> Movie time <i class="fas fa-leaf"></i> Movie
+                        </div>
+                    </div>
+                    
+                    <div class="portrait-caption">
+                        <h3><span class="caption-icon">🍿🤍🎬✨</span> First Bioskop Date date</h3>
+                        <p class="caption-date"><i class="fas fa-calendar-day"></i> 25 Desember 2025</p>
+                        <p class="caption-desc">inii fotoo sebelum kitaa nontonn avatar barengg, hari ituu serunyaa pake bangett, bisa keliling keliling mall lagii bareng kamuu, bisa foto miror bareng kamu, teruss kitaa bikin video bareng jugaa lucuu ahahaha,pokonyaa harii ituu aku rating 1000000/10✨</p>
+                        <div class="caption-tags">
+                            <span class="portrait-tag tag-memory"><i class="fas fa-memory"></i> Cinema</span>
+                            <span class="portrait-tag tag-icecream"><i class="fas fa-ice-cream"></i> Pop corn</span>
+                            <span class="portrait-tag tag-together"><i class="fas fa-users"></i> Movie Date</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigasi Slide -->
+        <div class="portrait-nav">
+            <button class="portrait-nav-btn prev-portrait" onclick="prevPortraitSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Indikator -->
+            <div class="portrait-indicators">
+                <span class="p-dot active" onclick="goToPortraitSlide(0)">1</span>
+                <span class="p-dot" onclick="goToPortraitSlide(1)">2</span>
+                <span class="p-dot" onclick="goToPortraitSlide(2)">3</span>
+                <span class="p-dot" onclick="goToPortraitSlide(3)">4</span>
+            </div>
+            
+            <button class="portrait-nav-btn next-portrait" onclick="nextPortraitSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Pesan Gallery -->
+        <div class="portrait-quote">
+            <div class="quote-content">
+                <p>It wasn’t about where we went or what we did, it was about being there together</p>
+                <p class="quote-highlight">These are the kind of moments you don’t post for attention, you keep them for yourself 💖</p>
+            </div>
+            <div class="quote-footer">
+                <div class="quote-icons">
+                    <i class="fas fa-camera"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-ice-cream"></i>
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-images"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tombol Navigasi -->
+        <div class="portrait-action-buttons">
+            <button class="btn btn-portrait-back" onclick="goToScene('scene3')">
+                <i class="fas fa-arrow-left"></i> Kembali ke Surat
+            </button>
+            <button class="btn btn-romantic" onclick="showFinalScene()">
+                <i class="fas fa-gift"></i> Ada Kejutan Lagi gaiss!
+            </button>
+        </div>
+    </div>
+</div>
+               
+                <!-- SLIDE 3 --
+                <div class="slide"
+                    <div class="photo-frame"
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                             alt="Kenangan 3"
+                             class="gallery-photo"
+                        <div class="photo-caption"
+                            <h3>Good Morning Rutin</h3
+                            <p>Bangun tidur langsung cek chat kamu</p
+                            <small><i class="fas fa-calendar"></i> Juni 2024</small
+                        </div
+                    </div
+                </div
+               
+                <!-- SLIDE 4 --
+                <div class="slide"
+                    <div class="photo-frame"
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c113a1c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                             alt="Kenangan 4"
+                             class="gallery-photo"
+                        <div class="photo-caption"
+                            <h3>Cerita Galau & Senang</h3
+                            <p>Tempat curhat favorit kita berdua</p
+                            <small><i class="fas fa-calendar"></i> September 2024</small
+                        </div
+                    </div
+                </div
+            </div
+           
+            <button class="slide-btn next-btn" onclick="nextSlide()"
+                <i class="fas fa-chevron-right"></i
+            </button
+        </div
+       
+        <!-- Indikator Slide --
+        <div class="slide-indicators"
+            <span class="dot active" onclick="goToSlide(0)"></span
+            <span class="dot" onclick="goToSlide(1)"></span
+            <span class="dot" onclick="goToSlide(2)"></span
+            <span class="dot" onclick="goToSlide(3)"></span
+        </div
+       
+        <!-- Caption Global --
+        <div class="gallery-message"
+            <p>Setiap foto punya cerita, setiap cerita bikin aku makin sayang... ❤️</p
+        </div
+       
+        <!-- Tombol Navigasi --
+        <div class="gallery-nav"
+            <button class="btn btn-romantic" onclick="goToScene('scene3')"
+                <i class="fas fa-arrow-left"></i> Kembali ke Sura
+            </button
+            <button class="btn btn-romantic" onclick="goToScene('scene4')"
+                Lanjut ke Pesan Terakhir <i class="fas fa-arrow-right"></i
+            </button
+        </div
+    </div
+</div>>>>>>>t>>> >>>> >>>>>>> >>>> >>>>>>>>>  >>> >>>>>>>>  >>> >>>>>>>>  >>> >>>>>>>>  >>>> >>>>>> >>>>
+
+    <!-- Halaman 4: Penutup & Permintaan Jawaban -->
+    <div id="scene4" class="scene">
+        <div class="final-scene">
+            <h1><i class="fas fa-heart"></i> Terima Kasii sudaa mauu bacaa sampe habiss <i class="fas fa-heart"></i></h1>
+            <p>Pesann ini mungkinn cumaa kumpulan kata di layar, tapii perasaann di baliknyaa seratus persennn <strong>rEyaLL</strong>.</p>
+            
+            <!-- BAGIAN INI AKAN DISCROLL OTOMATIS -->
+            <div id="serious-question" class="response-box">
+                <p class="question">Setelahh baca surat audd yang sangat sangatt jujur ituu... gimana perasaan agitt? 😊</p>
+                <p class="subquestion">Boleh gaa, di tahun baru inii, kita coba jalinn sesuatu yang lebih seriuss dan lebih seruu jugaa pastinyaa?</p>
+                
+                <div class="simple-choice">
+                    <button class="btn-final btn-yes-final" onclick="respond('yes')">
+                        <i class="fas fa-heart"></i> Bolehh, Aku Juga Ngerasain Hal Yang Samaa💞
+                    </button>
+                    <button class="btn-final btn-maybe" onclick="respond('maybe')">
+                        <i class="fas fa-star"></i> Aku Butuh Waktu Buat Mikir..☹️
+                    </button>
+                </div>
+                
+                <div id="finalResponse" class="final-response"></div>
+            </div>
+            
+            <div class="closing-message">
+                <p>Apapunn jawaban kamuu nantii, terima kasii udaa mau bacaa sampaii habis dan nerimaa kejujurankuu.<br>
+                <strong>Akuu tunggu cerita baiknyaa dari kamuu yaaa... 💌</strong></p>
+                
+                <p class="happy-new-year">✨ Happy New Year 2026, Agitt! ✨<br>
+                Semoga tahun inii dipenuhi dengan kisah maniss kitaa, jugaa dipenuhi kebahagiaan, kedamaian, dan hal-hal baik yang layak kamuu dan akuu dapatkan🫂💕.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konfeti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

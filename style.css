@@ -1,0 +1,971 @@
+/* ===== RESET & FONT ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== HEADER MODERN TRANSPARAN ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+}
+.nav a:hover {
+    color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+}
+
+/* ===== MUSIC CONTROL ===== */
+.music-control {
+    position: fixed;
+    bottom: : 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffeb3b;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+.music-control:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ===== SCENE (HALAMAN) ===== */
+.scene {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 50px;
+}
+.scene.active {
+    display: flex;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ===== HATI JATUH ===== */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    font-size: 1.8rem;
+    color: #ff6b8b;
+}
+.heart {
+    position: absolute;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* ===== SCENE 1: AMPLOP ===== */
+.christmas-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffcc00, #ff6b8b, #ffcc00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(255, 107, 139, 0.4);
+}
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* ANIMASI AMPLOP */
+.envelope-container {
+    position: relative;
+    margin: 40px 0;
+    cursor: pointer;
+}
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(135deg, #ff6b8b, #ffcc00);
+    border-radius: 0 0 15px 15px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s;
+}
+.envelope:hover {
+    transform: scale(1.03);
+}
+.envelope .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #ff8fa3;
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 2;
+}
+.envelope .body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #ff6b8b;
+    border-radius: 0 0 15px 15px;
+    z-index: 1;
+}
+.envelope-container.open .flap {
+    transform: rotateX(180deg);
+}
+.instruction {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #ffcc00;
+    font-weight: 500;
+}
+.hint {
+    margin-top: 40px;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* ===== SCENE 2: PILIHAN ===== */
+.letter-preview {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #ffcc00;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 550px;
+    text-align: left;
+    font-style: italic;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+.question {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    color: #ffcc00;
+    font-weight: 600;
+}
+
+/* TOMBOL PILIHAN */
+.choice-buttons {
+    display: flex;
+    gap: 25px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn {
+    padding: 20px 35px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 240px;
+    justify-content: center;
+}
+.btn-yes {
+    background: linear-gradient(to right, #ff6b8b, #ffcc00);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 107, 139, 0.5);
+}
+.btn-no {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.5);
+    position: relative;
+}
+.btn:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.playful-hint {
+    margin-top: 20px;
+    font-size: 1rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* ===== SCENE 3: SURAT ELEGAN ===== */
+.letter-container {
+    background: rgba(255, 255, 255, 0.97);
+    color: #333;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+.letter-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #ff6b8b, #ffcc00, #6a11cb);
+}
+.letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px dashed #ff6b8b;
+    padding-bottom: 25px;
+}
+.letter-header h2 {
+    color: #ff6b8b;
+    font-size: 2.8rem;
+    font-family: 'Dancing Script', cursive;
+}
+.date {
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+.letter-content p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 1.2rem;
+}
+.highlight-box {
+    background: linear-gradient(135deg, #ffcc00, #ff6b8b);
+    color: white;
+    border: none;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 107, 139, 0.3);
+}
+.highlight-box strong {
+    font-size: 1.8rem;
+}
+.closing {
+    margin-top: 60px;
+    text-align: right;
+}
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #6a11cb;
+    margin-top: 15px;
+    font-weight: 700;
+}
+.action-buttons {
+    margin-top: 50px;
+}
+.btn-romantic {
+    background: linear-gradient(to right, #ff6b8b, #6a11cb);
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+}
+.btn-share {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+}
+
+/* ===== SCENE 4: PENUTUP ===== */
+.final-scene {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.response-box {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 40px;
+    border-radius: 25px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.question {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.subquestion {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+.simple-choice {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+.btn-final {
+    padding: 25px 40px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.4s;
+    min-width: 280px;
+}
+.btn-yes-final {
+    background: linear-gradient(to right, #ff6b8b, #ffcc00);
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 107, 139, 0.5);
+}
+.btn-maybe {
+    background: linear-gradient(to right, #37474f, #607d8b);
+    color: white;
+    box-shadow: 0 10px 30px rgba(55, 71, 79, 0.5);
+}
+.btn-final:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.final-response {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    animation: popIn 0.6s;
+}
+@keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.closing-message {
+    margin-top: 60px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.happy-new-year {
+    font-size: 2.2rem;
+    margin-top: 50px;
+    color: #ffcc00;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+/* ===== KONFETI ===== */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ===== RESPONSIF UNTUK HP ===== */
+@media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .logo { font-size: 1.8rem; }
+    .nav a { margin-left: 15px; padding: 6px 12px; font-size: 1rem; }
+    .music-control { bottom: 15px; right: 30px; padding: 10px 15px; font-size: 0.85rem; }
+    .scene { padding: 100px 15px 40px; }
+    .christmas-title { font-size: 2.5rem; }
+    .envelope { width: 250px; height: 170px; }
+    .envelope .flap { border-left: 125px solid transparent; border-right: 125px solid transparent; border-top: 85px solid #ff8fa3; }
+    .btn, .btn-final { min-width: 100%; padding: 18px 25px; }
+    .choice-buttons, .simple-choice { flex-direction: column; width: 100%; }
+    .letter-container { padding: 30px 20px; margin: 20px 10px; }
+    .final-scene { padding: 30px 20px; }
+    .question { font-size: 1.6rem; }
+    .happy-new-year { font-size: 1.8rem; }
+}
+
+/* ============================================
+/* ===== SCENE 5: GALLERY PORTRAIT VERTICAL ===== */
+.gallery-container-portrait {
+    max-width: 450px; /* Lebih sempit untuk portrait */
+    width: 95%;
+    padding: 20px 10px;
+    margin: 0 auto;
+}
+
+.gallery-title-portrait {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-left: auto
+    margin-right: 0
+    width: fit-content
+    color: white
+    text-align: right
+    padding right:20px
+    text-shadow: 0 0 15px rgba(255, 107, 139, 0.5);
+}
+
+.gallery-subtitle-portrait {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    color: #ffcc00;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.gallery-subtitle-portrait small {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Container Slide Portrait */
+.portrait-slider-container {
+    position: relative;
+    margin: 20px auto 40px;
+    width: 100%;
+}
+
+.portrait-slide {
+    display: none;
+    animation: fadeInPortrait 0.6s ease;
+}
+
+.portrait-slide.active {
+    display: block;
+}
+
+@keyframes fadeInPortrait {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Kartu Foto Portrait */
+.portrait-photo-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 8px 20px rgba(255, 107, 139, 0.15);
+    margin-bottom: 30px;
+    transition: transform 0.4s;
+}
+
+.portrait-photo-card:hover {
+    transform: translateY(-8px);
+}
+
+/* FRAME PORTRAIT VERTICAL */
+.portrait-frame {
+    position: relative;
+    padding: 20px 20px 15px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Dekorasi Atas */
+.portrait-decoration.top {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+
+.decoration-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+    transition: transform 0.3s;
+}
+
+.decoration-icon:hover {
+    transform: scale(1.2);
+}
+
+.icecream-icon {
+    color: #ff6b8b;
+    text-shadow: 0 0 5px rgba(255, 107, 139, 0.5);
+}
+
+.matcha-icon {
+    color: #2e7d32;
+    text-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
+}
+
+.heart-decoration {
+    font-size: 2rem;
+    color: #ff6b8b;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.mix-decoration {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+/* AREA FOTO VERTIKAL UTAMA */
+.portrait-photo-area {
+    width: 100%;
+    height: 450px; /* TINGGI FIXED untuk portrait */
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.2);
+    background: #000; /* Background hitam untuk foto yang tidak full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini yang bikin foto portrait optimal */
+    object-position: center;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.portrait-photo-area:hover .portrait-photo-img {
+    transform: scale(1.03);
+}
+
+/* Dekorasi Bawah */
+.portrait-decoration.bottom {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.decoration-text {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* LABEL THEME */
+.matcha-label, .icecream-label, .romantic-label, .mix-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 3;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.matcha-label {
+    background: rgba(46, 125, 50, 0.15);
+    color: #2e7d32;
+    border: 1px solid rgba(46, 125, 50, 0.3);
+}
+
+.icecream-label {
+    background: rgba(255, 107, 139, 0.15);
+    color: #ff6b8b;
+    border: 1px solid rgba(255, 107, 139, 0.3);
+}
+
+.romantic-label {
+    background: rgba(255, 107, 139, 0.15);
+    color: #ff6b8b;
+    border: 1px solid rgba(255, 107, 139, 0.3);
+}
+
+.mix-label {
+    background: rgba(255, 204, 0, 0.15);
+    color: #ff9800;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+/* CAPTION */
+.portrait-caption {
+    padding: 25px 30px;
+    background: white;
+}
+
+.portrait-caption h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.caption-icon {
+    font-size: 1.5rem;
+}
+
+.caption-date {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.caption-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+/* TAGS */
+.caption-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.portrait-tag {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tag-matcha {
+    background: rgba(46, 125, 50, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+.tag-icecream {
+    background: rgba(255, 107, 139, 0.1);
+    color: #ff6b8b;
+    border: 1px solid rgba(255, 107, 139, 0.2);
+}
+
+.tag-first, .tag-morning, .tag-happy, .tag-together {
+    background: rgba(255, 204, 0, 0.1);
+    color: #ff9800;
+    border: 1px solid rgba(255, 204, 0, 0.2);
+}
+
+.tag-late, .tag-talk, .tag-memory {
+    background: rgba(106, 17, 203, 0.1);
+    color: #6a11cb;
+    border: 1px solid rgba(106, 17, 203, 0.2);
+}
+
+/* NAVIGASI */
+.portrait-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.portrait-nav-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b8b, #ffcc00);
+    color: white;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+}
+
+.portrait-nav-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(255, 107, 139, 0.6);
+}
+
+/* INDIKATOR ANGKA */
+.portrait-indicators {
+    display: flex;
+    gap: 15px;
+}
+
+.p-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.p-dot.active {
+    background: linear-gradient(135deg, #ff6b8b, #ffcc00);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+}
+
+.p-dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* QUOTE */
+.portrait-quote {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    margin: 30px 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.quote-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quote-content p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.quote-highlight {
+    color: #ffcc00;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+}
+
+.quote-footer {
+    text-align: center;
+}
+
+.quote-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.quote-icons i {
+    transition: transform 0.3s;
+}
+
+.quote-icons i:hover {
+    transform: translateY(-5px);
+}
+
+/* TOMBOL AKSI */
+.portrait-action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-portrait-back {
+    background: linear-gradient(to right, #2e7d32, #4caf50);
+    color: white;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+}
+
+.btn-portrait-next {
+    background: linear-gradient(to right, #ff6b8b, #ffcc00);
+    color: white;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+}
+
+/* ANIMASI TAMBAHAN */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* FRAME THEME BERBEDA */
+.matcha-portrait-frame {
+    background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+    border-bottom: 3px solid #2e7d32;
+}
+
+.icecream-portrait-frame {
+    background: linear-gradient(to bottom, #fff3e0, #ffe0b2);
+    border-bottom: 3px solid #ff9800;
+}
+
+.romantic-portrait-frame {
+    background: linear-gradient(to bottom, #fce4ec, #f8bbd9);
+    border-bottom: 3px solid #ff6b8b;
+}
+
+.mix-portrait-frame {
+    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+    border-bottom: 3px solid #2196f3;
+}
+
+/* RESPONSIF HP */
+@media (max-width: 768px) {
+    .gallery-container-portrait {
+        max-width: 95%;
+        padding: 10px 5px;
+    }
+    
+    .gallery-title-portrait {
+        font-size: 2.2rem;
+    }
+    
+    .portrait-photo-area {
+        height: 400px; /* Sedikit lebih pendek di HP */
+    }
+    
+    .portrait-frame {
+        min-height: 450px;
+        padding: 15px 15px 10px;
+    }
+    
+    .portrait-caption {
+        padding: 20px;
+    }
+    
+    .portrait-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .caption-desc {
+        font-size: 1rem;
+    }
+    
+    .portrait-nav {
+        gap: 15px;
+    }
+    
+    .portrait-nav-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    
+    .p-dot {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .quote-content p {
+        font-size: 1.1rem;
+    }
+    
+    .quote-highlight {
+        font-size: 1.2rem;
+    }
+    
+    .portrait-action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .portrait-action-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Swipe untuk HP */
+@media (hover: none) and (pointer: coarse) {
+    .portrait-photo-card {
+        cursor: grab;
+    }
+    
+    .portrait-photo-card:active {
+        cursor: grabbing;
+    }
+}
